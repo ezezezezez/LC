@@ -1,23 +1,28 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 // 3553. Minimum Weighted Subgraph With the Required Paths II
 public class P3553_2 {
+    // 1e5: K=17
     int K = 17;
     int N;
-    int[] dep, distFromRoot;
+    int[] dep;
+    long[] distFromRoot;
     List<int[]>[] adj;
     int[][] table;
+
     public int[] minimumWeight(int[][] edges, int[][] queries) {
         N = edges.length + 1;
         adj = new List[N];
         Arrays.setAll(adj, kk -> new ArrayList<>());
         for (int[] edge : edges) {
             int u = edge[0], v = edge[1], w = edge[2];
-            adj[u].add(new int[] {v, w});
-            adj[v].add(new int[] {u, w});
+            adj[u].add(new int[]{v, w});
+            adj[v].add(new int[]{u, w});
         }
         dep = new int[N];
-        distFromRoot = new int[N];
+        distFromRoot = new long[N];
         table = new int[N][K + 1];
         for (int[] row : table) Arrays.fill(row, -1);
         for (int i = 0; i <= K; i++) table[0][i] = 0;

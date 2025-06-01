@@ -1,7 +1,3 @@
-import java.util.*;
-import java.io.*;
-import java.lang.*;
-
 // 984. String Without AAA or BBB
 
 public class P984 {
