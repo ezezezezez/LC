@@ -1,6 +1,4 @@
-import java.io.*;
-import java.lang.*;
-import java.util.*;
+import java.util.Arrays;
 
 // 1561. Maximum Number of Coins You Can Get
 

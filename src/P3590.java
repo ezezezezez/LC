@@ -18,7 +18,6 @@ public class P3590 {
 
         // x: 1-based
         void update(int index, long delta) {
-            new StringBuilder().em
             if (index <= 0 || index > n)
                 throw new IllegalArgumentException(String.format("index(%s) should be in [1, n(%s)]", index, n));
             for (int i = index; i <= n; i += lowbit(i)) {
